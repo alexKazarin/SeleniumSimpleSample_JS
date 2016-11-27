@@ -1,0 +1,5 @@
+Used dependencies in project:
+
+Install IDE for develop code (ex. free Visual Studio Code)
+
+Install Node (http://nodejs.ru/)
