@@ -1,0 +1,15 @@
+{
+  "name": "seleniumsimplesample_js",
+  "version": "0.0.1",
+  "description": "Selenium tests example on javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "selenium",
+    "javascript"
+  ],
+  "author": "Alex Kazarin",
+  "license": "ISC"
+}
