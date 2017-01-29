@@ -2,6 +2,28 @@ Used dependencies in project:
 
 Install IDE for develop code (ex. free Visual Studio Code)
 
-Install Node (http://nodejs.ru/)
+Install Node v7.2.0 (http://nodejs.ru/)
 
+Install npm v3.10.9
+
+
+Process:
+
+initialise npm project
+$ npm init
+
+install javascript test framwork (ex. Mocha - https://mochajs.org)
+$ npm install --save-dev mocha
+
+install selenium-webdriver, for run chromedriver
+$ npm install --save-dev selenium-webdriver
+
+Create npm-command Regress in package.json (use: $ npm run Regress)
+
+
+
+
+
+Download Chromedriver from https://sites.google.com/a/chromium.org/chromedriver/
+Used for Linux x64 (depends of your system) v2.27 (last available)
 
