@@ -2,7 +2,7 @@
   "name": "seleniumsimplesample_js",
   "version": "0.0.2",
   "description": "Selenium tests example on javascript",
-  "main": "index.js",
+  "main": "src/tests/Tests.js",
   "scripts": {
     "tests": "node_modules/mocha/bin/mocha src/tests/Tests.js"
   },
