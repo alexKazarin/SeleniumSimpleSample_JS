@@ -1,11 +1,10 @@
 {
   "name": "seleniumsimplesample_js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Selenium tests example on javascript",
-  "main": "index.js",
+  "main": "src/tests/Tests.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "Regress": "node_modules/mocha/bin/mocha src/tests/Regress.js"
+    "tests": "node_modules/mocha/bin/mocha src/tests/Tests.js"
   },
   "keywords": [
     "selenium",
@@ -14,6 +13,7 @@
   "author": "Alex Kazarin",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "selenium-webdriver": "^3.0.1"
   }
 }
