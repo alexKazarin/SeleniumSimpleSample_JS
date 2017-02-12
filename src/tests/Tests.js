@@ -59,7 +59,7 @@ tests.describe("Selenium sample suite", function() {
     }
   });
 
-  tests.xit('Success simple test name', function(done) {
+  tests.it('Success simple test name', function(done) {
     let Url = "http://www.ya.ru";
     browser.get(Url).then(function() {
         console.log(`Page "${Url}" opened`);
