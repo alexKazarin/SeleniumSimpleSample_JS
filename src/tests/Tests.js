@@ -1,17 +1,24 @@
 
-let tests = require('selenium-webdriver/testing'); //selenium realisation of mocha library to support describe/it structure
+// selenium realisation of mocha library to support describe/it structure
+let tests = require('selenium-webdriver/testing');
+// webdriver library to create and control virtual browser
 let webdriver = require('selenium-webdriver');
+// lib for assertions support
+let assert = require('chai').assert;
+// lib for work with file system
+let fileSync = require('fs');
+// configuration file with global parameters - timeout's etc.
 let configs = require('../../Configurations');
+// must be defined to use in tests
+let browser;
 
-tests.describe("Selenium sample", function() {
+tests.describe("Selenium sample suite", function() {
+  // timeout for one test execution
   this.timeout(configs.timeout);
 
-  let browser;
-  let browserFunc;
-  let browserScenario;
-  // runs before each test in this block
+  // block, runs before each test
   tests.beforeEach(function() {
-   
+    // browser initialisation
     browser = new webdriver.Builder().usingServer(configs.Grid)
         .withCapabilities({
           'browserName': 'chrome',
@@ -22,10 +29,12 @@ tests.describe("Selenium sample", function() {
             }
           }
         }).build();
+    // TIPS: by default window is not fullscreen size - some elements could not be found
     browser.manage().window().maximize();
     
-    console.log('\n\nTEST-SUITE NAME: ' + this.currentTest.parent.title);
-    console.log('TEST NAME: ' + this.currentTest.title);
+    // information output
+    console.log('\n\nSuite: ' + this.currentTest.parent.title);
+    console.log('Test: ' + this.currentTest.title);
 
   });
 
@@ -44,24 +53,34 @@ tests.describe("Selenium sample", function() {
       console.log('Status: Test ' + testName + ' Passed!');
       browser.quit(); 
     }
+    else {
+      console.log('Status: Test ' + testName + ' Unknown status!');
+      browser.quit(); 
+    }
   });
 
-  tests.describe('Simple test suite', function() {
-    tests.beforeEach(function() {
-      console.log('Structure beforeEach structure in describe');  
+  tests.xit('Success simple test name', function(done) {
+    let Url = "http://www.ya.ru";
+    browser.get(Url).then(function() {
+        console.log(`Page "${Url}" opened`);
     });
+    done();
+  });
 
-    tests.it('Simple test name', function(done) {
-      browser.get("http://www.ya.ru").then(function() {
-          console.log("Page opened");
-          // done();
-        });
-      done();
+  tests.it('Failed simple test name', function(done) {
+    let Url = "http://www.ya.ru";
+    browser.get(Url).then(function() {
+        console.log(`Page "${Url}" opened`);
     });
-
-    tests.xit('x-ited test', function (done) {
-      done();
+    browser.getCurrentUrl().then(function(currentUrl) {
+        assert.equal(currentUrl, "www.google.com",
+            `Ищем url: www.google.com, а находим url: ${currentUrl}`);
     });
+    done();
+  });
 
+  // to disable test use 'xit' (mocha syntax)
+  tests.xit('x-ited test', function (done) {
+    done();
   });
 });
