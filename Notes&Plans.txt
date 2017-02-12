@@ -27,3 +27,15 @@ Create npm-command Regress in package.json (use: $ npm run Regress)
 Download Chromedriver from https://sites.google.com/a/chromium.org/chromedriver/
 Used for Linux x64 (depends of your system) v2.27 (last available)
 
+
+
+
+
+TODO:
+
+- простейший сценарий поиска на странице и переход
+- выделить работу с webdriver в отдельный файл
++ показать структуру моки - вложенные дискрайбы, блоки beforeEach и afterEach
+- использование сторонних репортов - самописных + Allure
+- запуск локально и через gridHub
+- в readme - про паттерн pObj 
