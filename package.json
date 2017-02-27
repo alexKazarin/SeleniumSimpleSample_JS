@@ -4,7 +4,7 @@
   "description": "Selenium tests example on javascript",
   "main": "src/tests/Tests.js",
   "scripts": {
-    "tests": "node_modules/mocha/bin/mocha src/tests/Tests.js"
+    "test": "node_modules/mocha/bin/mocha src/tests/Tests.js"
   },
   "keywords": [
     "selenium",
