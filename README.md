@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/alexKazarin/SeleniumSimpleSample_JS.svg?branch=master)](https://travis-ci.org/alexKazarin/SeleniumSimpleSample_JS)
+Travis CI: [![Build Status](https://travis-ci.org/alexKazarin/SeleniumSimpleSample_JS.svg?branch=master)](https://travis-ci.org/alexKazarin/SeleniumSimpleSample_JS)
 
 Simple example of HowTo organize Selenium-test on JavaScript.
 
