@@ -1,27 +1,25 @@
 Travis CI: [![Build Status](https://travis-ci.org/alexKazarin/SeleniumSimpleSample_JS.svg?branch=master)](https://travis-ci.org/alexKazarin/SeleniumSimpleSample_JS)
 
-Simple example of HowTo organize Selenium-test on JavaScript.
+This project is simple example of HowTo organize Selenium-tests on JavaScript.
 
-![Image of Selenium](http://johnbintz.github.io/jasmine-headless-webkit/images/f5.png)
+## You will need:
+- IDE to code (ex. free [Visual Studio Code](https://code.visualstudio.com/download))
+- Node (ex. used [v7.2.0](http://nodejs.ru/))
+- npm (ex. used v3.10.9)
 
-## The beginning:
+## How to run:
+After you have installed all necessary elements, clone this repo and execute in terminal 
+> $ npm run test
 
-- Install IDE for develop code (ex. free [Visual Studio Code](https://code.visualstudio.com/download))
-- Install [Node v7.2.0](http://nodejs.ru/)
-- Install npm v3.10.9
-- Download appropriate [Chromedriver](https://sites.google.com/a/chromium.org/chromedriver/)
-(*in example used for Linux x64 v2.27 last available)*
-
-## Installation:
-
-Initialise npm project
+## How to create your personal project step by step:
+Initialise npm project:
 > $ npm init
 
-Install used dependencies:
-* javascript test framwork (ex. [Mocha](https://mochajs.org))  
+Install dependencies:
+* javascript test framework (ex. [Mocha](https://mochajs.org))  
 > $ npm install --save-dev mocha  
 
-* selenium-webdriver, for run chromedriver  
+* module for webdriver support  
 > $ npm install --save-dev selenium-webdriver  
 
 * module for assertions support  
@@ -30,11 +28,18 @@ Install used dependencies:
 * module to work with file system (screenshots buffer)  
 > $ npm install --save-dev fs  
 
+Download webdriver and put it into project:
+* used [Chromedriver](https://sites.google.com/a/chromium.org/chromedriver/)
+*(ex. in repo last available v2.27 for Linux x64)*
 
-## Execution:
+Create npm-command "test" in package.json:
+```javascript
+"scripts": {
+    "test": "node_modules/mocha/bin/mocha src/tests/Tests.js"
+  },
+```
 
-Create npm-command Tests in package.json 
-> $ npm run Tests
+Start coding tests! *(or view this repo tests and its comments)*
 
-
-
+## Common structure:
+Read about pObject pattern
